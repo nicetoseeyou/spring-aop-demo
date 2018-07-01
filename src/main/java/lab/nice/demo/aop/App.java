@@ -2,6 +2,7 @@ package lab.nice.demo.aop;
 
 import lab.nice.demo.aop.model.Metrics;
 import lab.nice.demo.aop.service.KafkaMonitorService;
+import lab.nice.demo.aop.service.OtherMonitorService;
 import lab.nice.demo.aop.service.OtherService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -25,5 +26,8 @@ public class App
         OtherService otherService = (OtherService) context.getBean("otherService");
         otherService.save(10L);
         otherService.findById(10L);
+        OtherMonitorService otherMonitorService = (OtherMonitorService) context.getBean("otherMonitorService");
+        otherMonitorService.save(10L);
+        otherMonitorService.findById(10L);
     }
 }
